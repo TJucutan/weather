@@ -12,7 +12,8 @@ request({ url, json: true }, (error, { body }) => {
         const temperature = body.current.temperature
         const feelsLike = body.current.feelslike
         const description = body.current.weather_descriptions[0]
-        callback(undefined, `Today is ${description}. It is currently ${temperature} degrees out. It feels like ${feelsLike} out.`)
+        const humidity = body.current.humidity
+        callback(undefined, `Today is ${description}. It is currently ${temperature} degrees out. It feels like ${feelsLike}. The humidity is ${humidity}%`)
     } 
 })
 }
